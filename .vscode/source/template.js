@@ -22,21 +22,21 @@ function genManager(team) {
   team.forEach((obj) => {
     if (obj.getRole() === "Manager") {
       managerData = `			
-			<div class="row center-align">
-			<div class="col s12 m6">
-  			<div class="card teal darken-4 center-align">
-  			<div class="card-content white-text">
-      <span class="card-title">${obj.getName()}</span>
-      <p>${obj.getRole()}</p>
-    </div>
-    <div class="card-action">
-      <a href="#">${obj.getId()}</a>
-      <a href="#">${obj.getEmail()}</a>
-      <a href="#">${obj.getOfficeNumber()}</a>
-    </div>
-  </div>
-</div>
-</div>
+		<div class="row center-align">
+		<div class="col s12 m6">
+			<div class="card teal darken-4 center-align">
+				<div class="card-content white-text">
+					<span class="card-title">${obj.getName()}</span>
+					<p>${obj.getRole()}</p>
+				</div>
+				<div class="card-action">
+					<a href="#">${obj.getId()}</a>
+					<a href="#">${obj.getEmail()}</a>
+					<a href="#">${obj.getOfficeNumber()}</a>
+				</div>
+			</div>
+		</div>
+		</div>
 			`;
     } else {
       return "";
