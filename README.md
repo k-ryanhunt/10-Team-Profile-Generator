@@ -7,6 +7,7 @@ This project we were tasked to create a team profile generator.  Once the user g
 ## Installations
 
 * You must install 'inquirer NPM' in order to have this function properly.
+* Jest for testing purposes
 
 ## Usages
 
