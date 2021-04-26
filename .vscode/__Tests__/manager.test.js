@@ -1,4 +1,4 @@
-const Manager = require('../lib/Manager');
+const Manager = require('../library/Manager');
 
 describe("Manager", () => {
 	describe("getName", () => {

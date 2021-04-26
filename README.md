@@ -20,6 +20,12 @@ This project we were tasked to create a team profile generator.  Once the user g
 
 Kelsea Hunt
 
+## Testing
+
+* Jest
+
+![Screenshot](images/test.gif)
+
 ## Screenshots/GIFs of Application
 
 ![Screenshot](images/Team.png)
