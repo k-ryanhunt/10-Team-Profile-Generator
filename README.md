@@ -2,7 +2,7 @@
 
 ## What is this project about?
 
-This project we were tasked to create a team profile generator.  Once the user goes through all of the prompts, it will create a HTML file with the given information.  They will have the option of having 1 manager, multiple engineers, and multiple interns added to their team.
+This project we were tasked to create a team profile generator.  Once the user goes through all of the prompts, it will create a HTML file with the given information.  They will have the option of having 1 manager, multiple engineers, and multiple interns as employees added to their team.  Each category includes a test that passes through Jest.
 
 ## Installations
 

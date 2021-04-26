@@ -67,7 +67,7 @@ const addNewEmployee = [
   },
 ];
 
-const addEmpType = [
+const employeeType = [
   {
     type: "list",
     name: "typeEmp",
@@ -76,7 +76,7 @@ const addEmpType = [
   },
 ];
 
-const engineerQuest = [
+const questionEngineer = [
   {
     type: "input",
     name: "engName",
@@ -98,7 +98,7 @@ const engineerQuest = [
     message: "What is the Engineer's GitHub account?",
   },
 ];
-const internQuest = [
+const questionIntern = [
   {
     type: "input",
     name: "intName",
@@ -127,15 +127,15 @@ function writeToFile(fileName, f) {
   });
 }
 
-function createInt() {
-  inquirer.prompt(internQuest).then((res) => {
+function newIntern() {
+  inquirer.prompt(questionIntern).then((res) => {
     team.push(new Intern(res.intName, res.intId, res.intEmail, res.intSchool));
     addEmployees();
   });
 }
 
-function createEng() {
-  inquirer.prompt(engineerQuest).then((res) => {
+function newEngineer() {
+  inquirer.prompt(questionEngineer).then((res) => {
     team.push(
       new Engineer(res.engName, res.engId, res.engEmail, res.engGithub)
     );
@@ -143,16 +143,16 @@ function createEng() {
   });
 }
 
-function createEmp() {
-  inquirer.prompt(addEmpType).then((res) => {
+function newEmployee() {
+  inquirer.prompt(employeeType).then((res) => {
     console.log(res);
-    res.typeEmp === "Engineer" ? createEng() : createInt();
+    res.typeEmp === "Engineer" ? newEngineer() : newIntern();
   });
 }
 
 function addEmployees() {
   inquirer.prompt(addNewEmployee).then((res) => {
-    res.empAdd === "Yes" ? createEmp() : writeToFile("./index.html", teamProfile(team));
+    res.empAdd === "Yes" ? newEmployee() : writeToFile("./generatedIndex.html", teamProfile(team));
   });
 }
 
