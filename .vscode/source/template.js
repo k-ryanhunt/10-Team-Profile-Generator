@@ -1,118 +1,119 @@
-function genEmployees(team){
-	let htmlMain = '';
-	team.forEach(obj => {
-		switch (obj.getRole()) {
-			case 'Engineer':
-				let stringDataEng = genEngineer(obj);
-				htmlMain += stringDataEng;
-			break;
-			case 'Intern':
-				let stringDataInt = genIntern(obj);
-				htmlMain += stringDataInt;
-			break;
-			default:
-				return '';
-		}
-	});
-	return htmlMain;
-};
+function genEmployees(team) {
+  let htmlMain = "";
+  team.forEach((obj) => {
+    switch (obj.getRole()) {
+      case "Engineer":
+        let stringDataEng = genEngineer(obj);
+        htmlMain += stringDataEng;
+        break;
+      case "Intern":
+        let stringDataInt = genIntern(obj);
+        htmlMain += stringDataInt;
+        break;
+      default:
+        return "";
+    }
+  });
+  return htmlMain;
+}
 
 function genManager(team) {
-	let managerData = '';
-	team.forEach( obj => {
-		if (obj.getRole() === 'Manager') {
-			managerData =`			
-			<div class="col-2 cardCont">
-			<div class="card" >
-			<div class="card-body">
-			<h5 class="card-title">${obj.getName()}</h5>
-			<p class="card-text"><i class="bi bi-clipboard-check"></i>${obj.getRole()}
-			</p>
-			</div>
-			<ul class="list-group list-group-flush">
-			<li class="list-group-item">ID: ${obj.getId()}</li>
-			<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
-			<li class="list-group-item">Office Number: ${obj.getOfficeNumber()}</li>
-			</ul>
-			</div>
-			</div>
-			` 
-		} else {
-			return '';
-		}
-	});
-	return managerData;
-};
+  let managerData = "";
+  team.forEach((obj) => {
+    if (obj.getRole() === "Manager") {
+      managerData = `			
+			<div class="row center-align">
+			<div class="col s12 m6">
+  			<div class="card teal darken-4 center-align">
+  			<div class="card-content white-text">
+      <span class="card-title">${obj.getName()}</span>
+      <p>${obj.getRole()}</p>
+    </div>
+    <div class="card-action">
+      <a href="#">${obj.getId()}</a>
+      <a href="#">${obj.getEmail()}</a>
+      <a href="#">${obj.getOfficeNumber()}</a>
+    </div>
+  </div>
+</div>
+</div>
+			`;
+    } else {
+      return "";
+    }
+  });
+  return managerData;
+}
 
 function genEngineer(obj) {
-	return`			
-	<div class="col-2 cardCont">
-	<div class="card" >
-	<div class="card-body">
-	<h5 class="card-title">${obj.getName()}</h5>
-	<p class="card-text"><i class="bi bi-lightbulb"></i>${obj.getRole()}
-	</p>
+  return `			
+  <div class="row center-align">
+  <div class="col s12 m6">
+	<div class="card teal darken-4 center-align">
+	  <div class="card-content white-text">
+		<span class="card-title">${obj.getName()}</span>
+		<p>${obj.getRole()}</p>
+	  </div>
+	  <div class="card-action">
+		<a href="#">${obj.getId()}</a>
+		<a href="#">${obj.getEmail()}</a>
+		<a href="#">${obj.getGithub()}</a>
+	  </div>
 	</div>
-	<ul class="list-group list-group-flush">
-	<li class="list-group-item">ID: ${obj.getId()}</li>
-	<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
-	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub()}">${obj.getGithub()}</a></li>
-	</ul>
-	</div>
-	</div>
-	`
-};
+  </div>
+  </div>
+	`;
+}
 
 function genIntern(obj) {
-	return `			
-<div class="col-2 cardCont">
-<div class="card" >
-<div class="card-body">
-<h5 class="card-title">${obj.getName()}</h5>
-<p class="card-text"><i class="bi bi-pencil-square"></i>${obj.getRole()}
-</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item">ID: ${obj.getId()}</li>
-<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
-<li class="list-group-item">School: ${obj.getSchool()}</li>
-</ul>
-</div>
-</div>
-`
-};
+  return `			
+  <div class="row center-align">
+  <div class="col s12 m6">
+	<div class="card teal darken-4 center-align">
+	  <div class="card-content white-text">
+		<span class="card-title">${obj.getName()}</span>
+		<p>${obj.getRole()}</p>
+	  </div>
+	  <div class="card-action">
+		<a href="#">${obj.getId()}</a>
+		<a href="#">${obj.getEmail()}</a>
+		<a href="#">${obj.getSchool()}</a>
+	  </div>
+	</div>
+  </div>
+  </div>
+`;
+}
 
-function genFile(team) {
-	return `
+function teamProfile(team) {
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-crossorigin="anonymous"
-/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <title>Team</title>
 </head>
 <body>
-<header class='jumbotron'>
-<h1 class="display-4 text-center headerJumbo">My Team</h1>
-</header>
-<div class="row justify-content-center">
+<nav>
+<div class="nav-wrapper blue-grey darken-4">
+  <a href="#" class="brand-logo center">My Team</a>
+  <ul id="nav-mobile" class="left hide-on-med-and-down">
+  </ul>
+</div>
+</nav>
+<div class="row center-align">
 ${genManager(team)}
 </div>
-<div class="row justify-content-center">
+<div class="row center-align">
 ${genEmployees(team)}
 </div>
 </body>
 </html>
-`
-};
+`;
+}
 
 module.exports = teamProfile;
