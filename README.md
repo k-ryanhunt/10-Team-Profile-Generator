@@ -29,3 +29,5 @@ Kelsea Hunt
 
 
 ![GIF](images/working.gif)
+
+Here is a link to the video walkthrough 
